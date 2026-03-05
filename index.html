@@ -8,6 +8,7 @@
 </head>
 <body>
   <header>
+    <button id="toggleDark">Dark Mode</button>
     <h1>My Tasks</h1>
     <p>A simple task manager application</p>
   </header>
@@ -15,6 +16,13 @@
     <section class="card">
       <h2>New Task</h2>
       <form id="taskForm">
+        <label>Priority
+<select id="selPriority">
+<option value="Low">Low</option>
+<option value="Medium">Medium</option>
+<option value="High">High</option>
+</select>
+</label>
         <div class="form-grid">
           <label>Title <input id="txtTitle" required placeholder="Pay the bills" /></label>
           <label>Description <input id="txtDescription" placeholder="Electricity and water" /></label>
@@ -33,7 +41,45 @@
       </form>
     </section>
     <section class="card">
+      <div class="stats">
+
+<div class="stat-card">
+<h3 id="statTotal">0</h3>
+<p>Total Tasks</p>
+</div>
+
+<div class="stat-card">
+<h3 id="statNew">0</h3>
+<p>New</p>
+</div>
+
+<div class="stat-card">
+<h3 id="statProgress">0</h3>
+<p>In Progress</p>
+</div>
+
+<div class="stat-card">
+<h3 id="statDone">0</h3>
+<p>Completed</p>
+</div>
+
+</div>
       <h2>Task List</h2>
+ <div class="task-toolbar">
+
+<input 
+type="text" 
+id="searchBox" 
+placeholder="Search tasks..." 
+class="search-input"
+/>
+
+<span id="taskCount">0 Tasks</span>
+
+<button id="btnDeleteAll">Delete All Tasks</button>
+
+</div>
+</div>
       <table class="task-table">
     <thead>
         <tr>
@@ -47,8 +93,34 @@
         </tr>
     </thead>
     <tbody id="list"></tbody>
+    
 </table>
+<button id="btnDeleteAll">Delete All Tasks</button>
     </section>
+    <section class="board">
+
+<div class="column" id="colNew">
+<h3>New</h3>
+</div>
+
+<div class="column" id="colProgress">
+<h3>In Progress</h3>
+</div>
+
+<div class="column" id="colDone">
+<h3>Completed</h3>
+</div>
+
+</section>
+<section class="card">
+
+<h2>Task Calendar</h2>
+
+<input type="date" id="calendarDate">
+
+<ul id="calendarTasks"></ul>
+
+</section>
   </main>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="/scripts/task.js"></script>
