@@ -44,7 +44,12 @@ function registerTask(){
     clearForm();
 }
 
-
+//send to server
+$.ajax({
+    type:"POST",//HTTP Verb: Create
+    url:API,
+    data:JSON.stringify()
+})
 // ======================
 // DISPLAY TASKS (ROWS)
 // ======================
